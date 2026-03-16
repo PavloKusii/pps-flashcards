@@ -22,6 +22,9 @@
 
 body {
    /* TODO: Налаштувати шрифт, фон, мінімальну висоту */
+   background: url(img/7a822c5a666ffb2ddb6e04c301b0244a.webp);
+    background-repeat: repeat;
+   background-size: 1500px; 
 }
 
 /* --- Контейнер --- */
@@ -31,6 +34,9 @@ body {
 
 h1 {
    /* TODO: Стилізація заголовку */
+   text-align: center;
+   color: #d3a22f;
+   
 }
 
 /* --- Прогрес-бар --- */
@@ -81,3 +87,77 @@ h1 {
 
 /* --- Інструкції (опціонально) --- */
 /* TODO: Стилізація тексту з підказками для користувача */
+
+/* Основні моменти */
+.card {
+width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d; /* Важливо для 3D ефекту */
+  cursor: pointer;
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /* Приховує сторону, яка повернута від нас */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(200, 40, 40, 10);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.card-back {
+  background: #f8f9fa;
+  transform: rotateY(180deg); 
+}
+.container {
+  
+   justify-items: center;
+}
+button {
+   height: 44px;
+    border-radius: 15px;
+    width: 100%;
+   
+}
+.card-scene {
+   width: 300px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+.card-front {
+  background-color: #ffffff;
+  color: #333;
+  border: 2px solid #e0e0e0;
+}
+.card-back {
+  background-color: #f8f9fa;
+  color: #d32f2f; /* Червоний колір для відповіді (в стилі ДСНС) */
+  transform: rotateY(180deg); /* Початково розгорнута на 180 градусів */
+  border: 2px solid #d32f2f;
+}
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.progress-line {
+  height: 100%;
+  background: #d32f2f;
+  width: 0%;
+  transition: width 0.3s ease;
+}

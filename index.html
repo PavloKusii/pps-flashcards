@@ -7,14 +7,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>Пожежно-прикладний спорт</h1>
+  <main>
+    
     
     <!-- TODO: Прогрес-бар
          - Контейнер для прогрес-бару
          - Заповнювана смужка (ширина змінюється через JS)
          - Текстовий індикатор: "1 / 12"
     -->
+         
+         
 
     <!-- TODO: Флеш-картка
          - Зовнішній контейнер з role="button" та tabindex="0"
@@ -31,9 +33,50 @@
     -->
 
     <!-- TODO (опціонально): Інструкції для користувача -->
+   <div id="app" class="container">
+    <h1>Пожежно-прикладний спорт</h1>
+    
+    <div class="progress-wrapper">
+      <div class="progress-container" role="progressbar" aria-label="Прогрес вивчення карток">
+        <div id="progress-line" class="progress-line"></div>
+      </div>
+      <div id="progress-text" class="progress-counter">1 / 12</div>
+    </div>
 
+    <div class="card-scene">
+      <div 
+        id="flashcard" 
+        class="card" 
+        role="button" 
+        tabindex="0" 
+        aria-label="Флеш-картка: натисніть, щоб побачити відповідь"
+      >
+        <div class="card-face card-front">
+          <p id="question-text">Завантаження питання...</p>
+        </div>
+        <div class="card-face card-back">
+          <p id="answer-text">Завантаження відповіді...</p>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navigation">
+      <button id="prev-btn" class="btn" aria-label="Попередня картка">
+        &larr; Назад
+      </button>
+      <button id="next-btn" class="btn" aria-label="Наступна картка">
+        Вперед &rarr;
+      </button>
+    </nav>
+
+    <footer class="instructions">
+     
+    </footer>
+  </div>
+
+  <script type="module" src="app.js"></script>
   </main>
 
-  <script src="app.js"></script>
+  
 </body>
 </html>
